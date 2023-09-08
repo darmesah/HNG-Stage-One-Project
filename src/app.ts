@@ -24,9 +24,16 @@ app.get("/api", (req: Request, res: Response) => {
     .toISOString()
     .replace(/.\d+Z$/g, "Z");
 
-  const github_file_url = "";
-
-  res.json({ slack_name, currrent_day, utc_time, track });
+  res.status(200).json({
+    slack_name,
+    currrent_day,
+    utc_time,
+    track,
+    github_file_url:
+      "https://github.com/darmesah/HNG-Stage-One-Project/blob/main/src/app.ts",
+    github_repo_url: "https://github.com/darmesah/HNG-Stage-One-Project.git",
+    status_code: 200,
+  });
 });
 
 app.listen(3001, () => {
