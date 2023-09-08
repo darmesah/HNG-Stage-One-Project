@@ -4,7 +4,8 @@
   "description": "hng stage 1 project",
   "main": "app.js",
   "scripts": {
-    "dev": "nodemon dist/app.js"
+    "dev": "nodemon dist/app.js",
+     "start": "node app.js"
   },
   "author": "Damisa Alex",
   "license": "ISC",
