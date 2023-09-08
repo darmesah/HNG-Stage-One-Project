@@ -20,13 +20,13 @@ app.get("/api", (req, res) => {
         "Saturday",
     ];
     const now = new Date();
-    const currrent_day = weekday[now.getDay()];
+    const current_day = weekday[now.getDay()];
     const utc_time = new Date(now.getTime() - now.getTimezoneOffset() * 60000)
         .toISOString()
         .replace(/.\d+Z$/g, "Z");
     res.status(200).json({
         slack_name,
-        currrent_day,
+        current_day,
         utc_time,
         track,
         github_file_url: "https://github.com/darmesah/HNG-Stage-One-Project/blob/main/src/app.ts",
