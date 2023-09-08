@@ -1,5 +1,4 @@
 import express, { Request, Response } from "express";
-import moment from "moment";
 
 const app = express();
 
@@ -25,15 +24,10 @@ app.get("/api", (req: Request, res: Response) => {
     .toISOString()
     .replace(/.\d+Z$/g, "Z");
 
-  const utc_time2 = moment().format();
-  const utc_time3 = moment.parseZone(moment()).utc(true).format();
-
   res.status(200).json({
     slack_name,
     currrent_day,
     utc_time,
-    utc_time2,
-    utc_time3,
     track,
     github_file_url:
       "https://github.com/darmesah/HNG-Stage-One-Project/blob/main/src/app.ts",
